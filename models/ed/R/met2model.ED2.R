@@ -34,6 +34,10 @@
 met2model.ED2 <- function(in.path, in.prefix, outfolder, start_date, end_date, lst = 0, lat = NA,
                           lon = NA, overwrite = FALSE, verbose = FALSE, ...) {
   overwrite <- as.logical(overwrite)
+  is_GFDL<-pmatch("GFDL", in.prefix)>0
+  # deprecated?  
+  library(rhdf5)
+  library(PEcAn.utils)
 
   # results are stored in folder prefix.start.end
   start_date <- as.POSIXlt(start_date, tz = "UTC")
@@ -60,6 +64,7 @@ met2model.ED2 <- function(in.path, in.prefix, outfolder, start_date, end_date, l
   mon_num <- c("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
   day2mo <- function(year, day) {
     leap      <- lubridate::leap_year(year)
+    if(is_GFDL){leap<-FALSE}
     mo        <- rep(NA, length(day))
     mo[leap]  <- findInterval(day[leap], dl)
     mo[!leap] <- findInterval(day[!leap], dm)
@@ -124,7 +129,10 @@ met2model.ED2 <- function(in.path, in.prefix, outfolder, start_date, end_date, l
 
     ncdf4::nc_close(nc)
 
-    dt <- PEcAn.utils::seconds_in_year(year) / length(sec)
+    #dt <- PEcAn.utils::seconds_in_year(year) / length(sec)
+    dt <- ifelse(lubridate::leap_year(year) == TRUE && !is_GFDL, 
+                 366 * 24 * 60 * 60 / length(sec), # leap year
+                 365 * 24 * 60 * 60 / length(sec)) # non-leap year, and GFDL
 
     toff <- -as.numeric(lst) * 3600 / dt
 
