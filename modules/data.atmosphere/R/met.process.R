@@ -26,7 +26,7 @@
 met.process <- function(site, input_met, start_date, end_date, model,
                         host = "localhost", dbparms, dir, browndog = NULL, spin=NULL,
                         overwrite = FALSE) {
-
+library(rhdf5)
   # get met source and potentially determine where to start in the process
   if(is.null(input_met$source)){
     if(is.null(input_met$id)){
