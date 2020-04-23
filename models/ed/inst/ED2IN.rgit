@@ -635,7 +635,7 @@ $ED_NL
    !                                                                                       !
    ! 1: new grass scheme as described above                                                !
    !---------------------------------------------------------------------------------------!
-   NL%IGRASS          = 0
+   NL%IGRASS          = 1
    !---------------------------------------------------------------------------------------!
    ! IPHEN_SCHEME -- It controls the phenology scheme.  Even within each scheme, the       !
    !                 actual phenology will be different depending on the PFT.              !
@@ -667,7 +667,7 @@ $ED_NL
    !  New scheme: plants shed their leaves once a 10-day running average of available      !
    !              water becomes less than a critical value.                                !
    !---------------------------------------------------------------------------------------!
-   NL%IPHEN_SCHEME    = @PHENOL_SCHEME@
+   NL%IPHEN_SCHEME    = 1 !Should checnge phenol scheme in pecan
    !---------------------------------------------------------------------------------------!
    !     Parameters that control the phenology response to radiation, used only when       !
    ! IPHEN_SCHEME = 3.                                                                     !
@@ -692,7 +692,7 @@ $ED_NL
    !                     drought deciduous plants.  This option is for testing purposes    !
    !                     only, think 50 times before using it...                           !
    !---------------------------------------------------------------------------------------!
-   NL%REPRO_SCHEME    = 0 
+   NL%REPRO_SCHEME    = 1 ! could be any number other than 0 
    !---------------------------------------------------------------------------------------!
    ! LAPSE_SCHEME -- This specifies the met lapse rate scheme:                             !
    !                 0.  No lapse rates                                                    !
@@ -1090,7 +1090,7 @@ $ED_NL
    ! 7 - southern pines                   | 17 - "Araucaria" (non-optimised                !
    ! 8 - late conifers                    |      Southern Pines).                          !
    !---------------------------------------------------------------------------------------!
-   NL%INCLUDE_THESE_PFT = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17        ! List of PFTs to be included 
+   NL%INCLUDE_THESE_PFT = 1       ! List of PFTs to be included 
    NL%AGRI_STOCK        = 5                           ! Agriculture PFT (used only if ianth_disturb=1)
    NL%PLANTATION_STOCK  = 6                           ! Plantation PFT  (used only if ianth_disturb=1)
    !---------------------------------------------------------------------------------------!
@@ -1100,7 +1100,7 @@ $ED_NL
    !                  1.  Add the PFT in the INCLUDE_THESE_PFT list                        !
    !                  2.  Ignore the cohort                                                !
    !---------------------------------------------------------------------------------------!
-   NL%PFT_1ST_CHECK = 0
+   NL%PFT_1ST_CHECK = 1
    !---------------------------------------------------------------------------------------!
    ! The following variables control the size of sub-polygon structures in ED-2.           !
    ! MAXSITE        -- This is the strict maximum number of sites that each polygon can    !
