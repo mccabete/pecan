@@ -83,7 +83,7 @@ modify_ed2in <- function(ed2in, ...,
                          include_these_pft = NULL,
                          pecan_defaults = FALSE,
                          add_if_missing = FALSE,
-                         check_paths = TRUE,
+                         check_paths = FALSE,#TRUE, 
                          .dots = list()) {
 
   if (is.null(.dots)) {

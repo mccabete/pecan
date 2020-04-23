@@ -22,7 +22,7 @@ modify_ed2in(
   include_these_pft = NULL,
   pecan_defaults = FALSE,
   add_if_missing = FALSE,
-  check_paths = TRUE,
+  check_paths = FALSE,
   .dots = list()
 )
 }

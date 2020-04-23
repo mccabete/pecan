@@ -198,7 +198,7 @@ $ED_NL
    NL%IQOUTPUT  =  0			! Monthly means (diurnal cycle)
    NL%IYOUTPUT  =  3			! Annual output
    NL%ITOUTPUT  =  3			! Instantaneous fluxes (site average) --> "Tower" Files
-   NL%IOOUTPUT  =  0
+   !NL%IOOUTPUT  =  0! New ED version
    NL%ISOUTPUT  =  0			! History files
    !---------------------------------------------------------------------------------------!
 
@@ -787,7 +787,7 @@ $ED_NL
    !                       -1. Same as 1 but leaf/wood heat capacity does not change       !
    !                       -2. Same as 2 but leaf/wood heat capacity does not change       !
    !---------------------------------------------------------------------------------------!
-   NL%PLANT_HYDRO_SCHEME   = 0
+   !NL%PLANT_HYDRO_SCHEME   = 0 !new ED version
    !---------------------------------------------------------------------------------------!
 
    !---------------------------------------------------------------------------------------!
@@ -798,7 +798,7 @@ $ED_NL
    !                             This helps to give deciduous PFTs enough carbon to flush  !
    !                             new leaves when growing season comes                      !
    !---------------------------------------------------------------------------------------!
-   NL%ISTRUCT_GROWTH_SCHEME = 0
+   !NL%ISTRUCT_GROWTH_SCHEME = 0 ! New ED version 
    !---------------------------------------------------------------------------------------!
 
    !---------------------------------------------------------------------------------------!
@@ -806,7 +806,7 @@ $ED_NL
    !                    0. Leuning (default by ED2.2 and before)                           !
    !                    1. Katul's optimization based model (see Xu et al. 2016)           !
    !---------------------------------------------------------------------------------------!
-   NL%ISTOMATA_SCHEME = 0
+   !NL%ISTOMATA_SCHEME = 0 ! New ED version 
    !---------------------------------------------------------------------------------------!
 
    !---------------------------------------------------------------------------------------!
@@ -824,7 +824,7 @@ $ED_NL
    !                           -1. Same as 1 but use height to adjust SLA                  !
    !                           -2. Same as 2 but use height to adjust SLA                  !
    !---------------------------------------------------------------------------------------!
-   NL%TRAIT_PLASTICITY_SCHEME = 0
+   !NL%TRAIT_PLASTICITY_SCHEME = 0! New ED version 
    !---------------------------------------------------------------------------------------!
 
    !---------------------------------------------------------------------------------------!
